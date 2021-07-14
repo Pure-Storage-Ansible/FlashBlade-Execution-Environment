@@ -1,0 +1,25 @@
+---
+- project:
+    check:
+      jobs:
+        - flashblade-ee-build-container-image
+        - flashblade-ee-tox-ansible-builder
+    gate:
+      jobs:
+        - flashblade-ee-build-container-image
+        - flashblade-ee-tox-ansible-builder
+    post:
+      jobs:
+        - flashblade-ee-upload-container-image:
+            vars:
+              upload_container_image_promote: false
+    release:
+      jobs:
+        - flashblade-ee-upload-container-image:
+            vars:
+              upload_container_image_promote: false
+    periodic:
+      jobs:
+        - flashblade-ee-upload-container-image:
+            vars:
+              upload_container_image_promote: false
