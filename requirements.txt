@@ -1,1 +1,6 @@
 git+https://github.com/ansible/ansible-builder.git@devel#egg=ansible-builder
+netaddr
+datetime
+pytz
+purity-fb
+py-pure-client
